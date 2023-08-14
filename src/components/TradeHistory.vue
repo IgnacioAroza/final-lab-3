@@ -39,8 +39,10 @@
     <div class="viewModal" v-if="viewModalVisible">
         <div class="modal-dialog">
             <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Detalles de la Transaccion</h2>
+                </div>
                 <div class="modal-body">
-                    <h2>Detalles de Transaccion</h2>
                     <p><strong>Accion:</strong> {{ newMovement.action }} </p>
                     <p><strong>Divisa:</strong> {{ newMovement.crypto_code }} </p>
                     <p><strong>Cantidad:</strong> {{ newMovement.crypto_amount }} </p>
@@ -231,10 +233,12 @@ import Swal from 'sweetalert2';
             openViewModal(func){
                 this.selectedTransaction = this.newMovement;
                 this.viewModalVisible = true;
+                this.editModalVisible = false;
             },
             openEditModal(func){
                 this.selectedTransaction = this.newMovement;
                 this.editedTransaction = { ...this.newMovement }
+                this.viewModalVisible = false;
                 this.editModalVisible = true;
             },
             closeViewModal(){
@@ -252,6 +256,7 @@ import Swal from 'sweetalert2';
 <style scoped>
 .tradeHistory{
     margin: 5%;
+    z-index: 1;
 }
 .buttons{
     display: flex;
@@ -278,14 +283,21 @@ import Swal from 'sweetalert2';
 }
 .editModal, .viewModal{
     width: 500px;
-    display: flex;
-    justify-content: center;
     margin: 5%;
+    margin-left: 32%;
     border: 1px solid #000;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     background-color: #ffffff;
-    z-index: 100;
+    z-index: 2;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    /* transition: 5s; */
+}
+.modal-header{
+    margin: 5%;
+    width: 100%;
 }
 .modal-footer button{
     margin: 5%;
