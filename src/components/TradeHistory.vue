@@ -25,7 +25,7 @@
                             <td class="tg-kxt4">$ {{ Number(transaccion.money).toLocaleString() }}</td>
                             <td class="tg-kxt4">{{ new Date(transaccion.datetime).toLocaleString() }}</td>
                             <td class="buttons">
-                                <button class="btn btn-primary"  @click="openViewModal(getMovementToEdit(transaccion._id, true))" type="button">Ver</button>
+                                <button class="btn btn-primary" @click="openViewModal(getMovementToEdit(transaccion._id, true))" type="button">Ver</button>
                                 <button class="btn btn-warning" @click="openEditModal(getMovementToEdit(transaccion._id, false))">Editar</button>
                                 <button class="btn btn-danger" @click="deleteMovement(transaccion._id)">Eliminar</button>
                             </td>

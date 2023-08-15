@@ -1,11 +1,9 @@
 <template>
     <div class="register">
-        <h2>Ingrese su usuario para comenzar</h2>
         <div class="form-register mt-4 mb-3">
             <form v-on:submit.prevent="createUser">
                 <h1 class="h3 mb-3 fw-normal">Por favor registrese</h1>
                 <div class="form">
-                    <!-- <label for="username" class="mb-2 h5">Ingrese su usuario</label> -->
                     <input type="text" class="form-control mb-3" id="username" name="username" v-model="username" placeholder="Usuario">
                 </div>
                 <button class="btn btn-lg btn-primary w-100" type="submit">Registrarme</button>

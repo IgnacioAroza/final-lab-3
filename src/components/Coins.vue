@@ -10,7 +10,7 @@
                 <div class="info">
                 <h5 class="card-title" >{{coin.name}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">{{coin.symbol}}</h6>
-                <p class="card-text">USD {{coin.market_data.current_price.usd.toLocaleString()}}</p>
+                <p class="card-text">ARS$ {{coin.market_data.current_price.ars.toLocaleString()}}</p>
                 </div>
             </div>
         </div>
