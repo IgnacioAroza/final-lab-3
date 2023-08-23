@@ -113,7 +113,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" @click="closeEditModal">Cerrar</button>
-                    <button type="button" class="btn btn-warning" v-on:click="postNewMovement(newMovement._id)">Guardar Cambios</button>
+                    <button type="button" class="btn btn-warning" @click="reloadTable(postNewMovement(newMovement._id))">Guardar Cambios</button>
                 </div>
             </div>
         </div>
@@ -168,7 +168,6 @@ import Swal from 'sweetalert2';
             
         },
         methods:{
-            
             reloadTable(){
                 ServicesAxios.getMovements(this.$store.state.username).then((res) => {
                 this.investmentHistory = res.data
@@ -186,7 +185,7 @@ import Swal from 'sweetalert2';
                     Swal.fire("Movimiento borrado");
                     this.reloadTable();
                 })
-                this.investmentHistory = ""
+                this.investmentHistory = "";
             },
 
             getMovementToEdit(id, isView){
