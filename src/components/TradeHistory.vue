@@ -168,7 +168,6 @@ import Swal from 'sweetalert2';
             
         },
         methods:{
-            
             reloadTable(){
                 ServicesAxios.getMovements(this.$store.state.username).then((res) => {
                 this.investmentHistory = res.data
@@ -186,7 +185,7 @@ import Swal from 'sweetalert2';
                     Swal.fire("Movimiento borrado");
                     this.reloadTable();
                 })
-                this.investmentHistory = ""
+                this.investmentHistory = "";
             },
 
             getMovementToEdit(id, isView){
