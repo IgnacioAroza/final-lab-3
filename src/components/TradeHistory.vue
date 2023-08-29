@@ -113,7 +113,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" @click="closeEditModal">Cerrar</button>
-                    <button type="button" class="btn btn-warning" v-on:click="postNewMovement(newMovement._id)">Guardar Cambios</button>
+                    <button type="button" class="btn btn-warning" @click="reloadTable(postNewMovement(newMovement._id))">Guardar Cambios</button>
                 </div>
             </div>
         </div>

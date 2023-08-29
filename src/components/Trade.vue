@@ -135,7 +135,7 @@ export default{
         newBuy(){
             this.purchase.user_id = this.$store.state.username;
             this.purchase.crypto_code = this.coinSelectedToBuy;
-            this.purchase.crypto_amount = this.amountToBuy.toFixed(2);
+            this.purchase.crypto_amount = this.amountToBuy.toFixed(5);
             this.purchase.money = (this.buyPrice * this.amountToBuy).toFixed(2).toString();
             this.purchase.action = "purchase";
             this.purchase.datetime = Date.now();
@@ -158,7 +158,7 @@ export default{
             else{
                 this.sell.user_id = this.$store.state.username;
                 this.sell.crypto_code = this.coinSelectedToSell;
-                this.sell.crypto_amount = this.amountToSell.toFixed(2);
+                this.sell.crypto_amount = this.amountToSell.toFixed(5);
                 this.sell.money = (this.salePrice * this.amountToSell).toFixed(2).toString();
                 this.sell.action = "sale";
                 this.sell.datetime = Date.now();
