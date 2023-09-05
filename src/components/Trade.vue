@@ -135,7 +135,7 @@ export default{
         newBuy(){
             this.purchase.user_id = this.$store.state.username;
             this.purchase.crypto_code = this.coinSelectedToBuy;
-            this.purchase.crypto_amount = this.amountToBuy.toFixed(5);
+            this.purchase.crypto_amount = this.amountToBuy.toFixed(3);
             this.purchase.money = (this.buyPrice * this.amountToBuy).toFixed(2).toString();
             this.purchase.action = "purchase";
             this.purchase.datetime = Date.now();
